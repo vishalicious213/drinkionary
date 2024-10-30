@@ -45,5 +45,17 @@ function getData(btn) {
 // ⬇️ RENDER FUNCTIONS ⬇️
 
 function renderCocktails(arr) {
+    renderSection.innerHTML = ""
+    let cocktailsToRender = []
     console.log(arr)
+
+    arr.map(cocktail => {
+        cocktailsToRender.push(`
+            <section id=${cocktail.idDrink} class="cocktail">
+                <h1>${cocktail.strDrink}</h1>
+            </section>
+        `)
+    }).join("")
+
+    renderSection.innerHTML = cocktailsToRender
 }
