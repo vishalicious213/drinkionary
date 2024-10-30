@@ -34,7 +34,7 @@ function getData(btn) {
         // console.log(data)
 
         if (btn === "s") {
-            renderCocktails(data.drinks)
+            getCocktails(data.drinks)
         }
     })
     .catch(err => {
@@ -42,9 +42,7 @@ function getData(btn) {
     })
 }
 
-// ⬇️ RENDER FUNCTIONS ⬇️
-
-function renderCocktails(arr) {
+function getCocktails(arr) {
     renderSection.innerHTML = ""
     let cocktailsToRender = []
     console.log(arr)
@@ -70,6 +68,7 @@ function renderCocktails(arr) {
                 <p>${cocktail.strGlass}</p>
                 <h2>Ingredients:</h2>
                 <section>${ingredients}</section>
+                <p>${cocktail.strInstructions}</p>
                 <img src=${cocktail.strDrinkThumb} alt=${cocktail.strDrink}>
             </section>
         `)
@@ -77,3 +76,5 @@ function renderCocktails(arr) {
 
     renderSection.innerHTML = cocktailsToRender
 }
+
+// ⬇️ RENDER FUNCTIONS ⬇️
