@@ -50,9 +50,27 @@ function renderCocktails(arr) {
     console.log(arr)
 
     arr.map(cocktail => {
+        let ingredients = ""
+
+        for (let i = 1; i <= 15; i++) {
+            // console.log(cocktail[`strIngredient${i}`])
+            if (cocktail[`strIngredient${i}`] !== null) {
+                if (cocktail[`strMeasure${i}`] === null) {
+                    cocktail[`strMeasure${i}`] = ""
+                }
+                ingredients += `<p>${cocktail[`strMeasure${i}`]} ${cocktail[`strIngredient${i}`]}</p>`
+            }
+        }
+
         cocktailsToRender.push(`
             <section id=${cocktail.idDrink} class="cocktail">
                 <h1>${cocktail.strDrink}</h1>
+                <p>${cocktail.strCategory}</p>
+                <p>${cocktail.strAlcoholic}</p>
+                <p>${cocktail.strGlass}</p>
+                <h2>Ingredients:</h2>
+                <section>${ingredients}</section>
+                <img src=${cocktail.strDrinkThumb} alt=${cocktail.strDrink}>
             </section>
         `)
     }).join("")

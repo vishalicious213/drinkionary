@@ -4,3 +4,7 @@
     box-sizing: border-box;
     font-family: "Raleway", Helvetica, sans-serif;
 }
+
+.cocktail img {
+    width: 100%;
+}
