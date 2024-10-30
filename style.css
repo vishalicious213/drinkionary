@@ -8,3 +8,14 @@
 .cocktail img {
     width: 100%;
 }
+
+/* COCKTAIL CARDS */
+
+.cocktail-info {
+    outline: 1px solid red;
+    display: flex;
+}
+
+.slide-button {
+    outline: 1px solid orange;
+}

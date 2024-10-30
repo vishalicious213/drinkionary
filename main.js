@@ -43,7 +43,6 @@ function getData(btn) {
 }
 
 function getCocktails(arr) {
-    renderSection.innerHTML = ""
     let cocktailsToRender = []
     console.log(arr)
 
@@ -62,19 +61,31 @@ function getCocktails(arr) {
 
         cocktailsToRender.push(`
             <section id=${cocktail.idDrink} class="cocktail">
-                <h1>${cocktail.strDrink}</h1>
-                <p>${cocktail.strCategory}</p>
-                <p>${cocktail.strAlcoholic}</p>
-                <p>${cocktail.strGlass}</p>
-                <h2>Ingredients:</h2>
-                <section>${ingredients}</section>
-                <p>${cocktail.strInstructions}</p>
+                <section class="cocktail-info">
+                    <div id="prev-btn" class="slide-button"><</div>
+                    <section>
+                        <h1>${cocktail.strDrink}</h1>
+                        <p>${cocktail.strCategory}</p>
+                        <p>${cocktail.strAlcoholic}</p>
+                        <p>${cocktail.strGlass}</p>
+                        <h2>Ingredients:</h2>
+                        <section>${ingredients}</section>
+                        <p>${cocktail.strInstructions}</p>
+                    </section>
+                    <div id="next-btn" class="slide-button">></div>
+                </section>
                 <img src=${cocktail.strDrinkThumb} alt=${cocktail.strDrink}>
             </section>
         `)
     }).join("")
 
-    renderSection.innerHTML = cocktailsToRender
+    renderCocktails(cocktailsToRender)
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
+
+function renderCocktails(arr) {
+    renderSection.innerHTML = ""
+
+    renderSection.innerHTML = arr[1]
+}
