@@ -1,5 +1,7 @@
 const menu = document.getElementById("menu")
 const renderSection = document.getElementById("render-area")
+let cocktailsToRender = []
+let currentSlide = 0
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -19,6 +21,26 @@ function handleMenuClick(e) {
 
 function handleDrinkClick(e) {
     console.log(e.target.id)
+
+    if (e.target.id === "prev-btn") {
+        currentSlide--
+
+        if (currentSlide < 0) {
+            currentSlide = cocktailsToRender.length - 1
+        }
+
+        renderCocktails(cocktailsToRender, currentSlide)
+    }
+
+    if (e.target.id === "next-btn") {
+        currentSlide++
+
+        if (currentSlide > cocktailsToRender.length - 1) {
+            currentSlide = 0
+        }
+
+        renderCocktails(cocktailsToRender, currentSlide)
+    }
 }
 
 // ⬇️ UTILITY FUNCTIONS ⬇️
@@ -49,7 +71,7 @@ function getData(btn) {
 }
 
 function getCocktails(arr) {
-    let cocktailsToRender = []
+    cocktailsToRender = []
     console.log(arr)
 
     arr.map(cocktail => {
@@ -76,7 +98,7 @@ function getCocktails(arr) {
                         <p>${cocktail.strGlass}</p>
                         <h2>Ingredients:</h2>
                         <section>${ingredients}</section>
-                        <p>${cocktail.strInstructions}</p>
+                        <p class="instructions">${cocktail.strInstructions}</p>
                     </section>
                     <div id="next-btn" class="slide-button">></div>
                 </section>
@@ -85,13 +107,12 @@ function getCocktails(arr) {
         `)
     }).join("")
 
-    renderCocktails(cocktailsToRender)
+    renderCocktails(cocktailsToRender, 0)
 }
 
 // ⬇️ RENDER FUNCTIONS ⬇️
 
-function renderCocktails(arr) {
+function renderCocktails(arr, slideNum) {
     renderSection.innerHTML = ""
-
-    renderSection.innerHTML = arr[1]
+    renderSection.innerHTML = arr[slideNum]
 }

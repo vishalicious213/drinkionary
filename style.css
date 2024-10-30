@@ -5,17 +5,44 @@
     font-family: "Raleway", Helvetica, sans-serif;
 }
 
-.cocktail img {
-    width: 100%;
-}
-
 /* COCKTAIL CARDS */
+
+.cocktail {
+    margin-top: 1rem;
+}
 
 .cocktail-info {
     outline: 1px solid red;
     display: flex;
 }
 
+.cocktail h1 {
+    font-size: 1.5rem;
+    margin: 0 0 .5rem 0;
+}
+
+.cocktail h2 {
+    font-size: 1.25rem;
+    margin: .5rem 0;
+}
+
+.cocktail .instructions {
+    margin: .5rem 0;
+}
+
+.cocktail img {
+    width: 100%;
+}
+
 .slide-button {
     outline: 1px solid orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    font-size: 2rem;
+}
+
+.slide-button:hover {
+    cursor: pointer;
 }
