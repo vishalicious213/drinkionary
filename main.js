@@ -5,6 +5,8 @@ const renderSection = document.getElementById("render-area")
 
 menu.addEventListener("click", handleMenuClick)
 
+renderSection.addEventListener("click", handleDrinkClick)
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 function handleMenuClick(e) {
@@ -13,6 +15,10 @@ function handleMenuClick(e) {
     if (e.target.id === "cocktail-btn") {
         getData("s")
     }
+}
+
+function handleDrinkClick(e) {
+    console.log(e.target.id)
 }
 
 // ⬇️ UTILITY FUNCTIONS ⬇️
