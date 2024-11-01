@@ -91,7 +91,7 @@ function getCocktails(arr) {
             <section id=${cocktail.idDrink} class="cocktail">
                 <section class="cocktail-info">
                     <div id="prev-btn" class="slide-button"><</div>
-                    <section>
+                    <section class="cocktail-details">
                         <h1>${cocktail.strDrink}</h1>
                         <p>${cocktail.strCategory}</p>
                         <p>${cocktail.strAlcoholic}</p>
