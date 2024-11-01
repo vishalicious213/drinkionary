@@ -5,6 +5,10 @@
     font-family: "Raleway", Helvetica, sans-serif;
 }
 
+.right {
+    text-align: right;
+}
+
 /* COCKTAIL CARDS */
 
 .cocktail {
@@ -23,7 +27,9 @@
 
 .cocktail h2 {
     font-size: 1.25rem;
-    margin: .5rem 0;
+    margin: .5rem 0 .75rem 0;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid black;
 }
 
 .cocktail .instructions {

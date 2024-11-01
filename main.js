@@ -96,8 +96,9 @@ function getCocktails(arr) {
                         <p>${cocktail.strCategory}</p>
                         <p>${cocktail.strAlcoholic}</p>
                         <p>${cocktail.strGlass}</p>
-                        <h2>Ingredients:</h2>
+                        <h2 class="right">Ingredients</h2>
                         <section>${ingredients}</section>
+                        <h2 class="right">Recipe</h2>
                         <p class="instructions">${cocktail.strInstructions}</p>
                     </section>
                     <div id="next-btn" class="slide-button">></div>
