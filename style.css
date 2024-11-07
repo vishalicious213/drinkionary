@@ -30,9 +30,33 @@ body {
 
 .menu {
     margin: 1rem .25rem;
-    padding: 1rem .5rem;
+    padding: 1rem;
     border-radius: .5rem;
-    background-color: peachpuff;
+    background-color: #28282B;
+}
+
+.menu h2 {
+    margin-bottom: .5rem;
+}
+
+.menu button {
+    padding: .25rem .5rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+}
+
+.menu button:hover {
+    cursor: pointer;
+}
+
+.menu input {
+    padding: .25rem;
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    margin-right: .25rem;
+    width: 12rem;
 }
 
 /* COCKTAIL CARDS */
