@@ -17,6 +17,10 @@
     display: flex;
 }
 
+.italic {
+    font-style: italic;
+}
+
 /* MENU */
 
 .menu {
