@@ -10,6 +10,10 @@ body {
     color: #FAFAFA;
 }
 
+body > h1 {
+    margin: 1rem 0 0 1.25rem;
+}
+
 .right {
     text-align: right;
 }
@@ -31,7 +35,7 @@ body {
 .menu {
     margin: 1rem .25rem;
     padding: 1rem;
-    border-radius: .5rem;
+    border-radius: .75rem;
     background-color: #28282B;
 }
 
@@ -132,7 +136,8 @@ body {
 
 .flip {
     background: #28282B;
-    padding: .5rem 1rem;
+    padding: .25rem;
+    width: 7.5rem;
     border-radius: .5rem;
     font-size: .9rem;
     font-weight: 600;
