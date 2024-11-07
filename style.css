@@ -94,7 +94,7 @@ body {
 
 .slide-button {
     font-size: 1.25rem;
-    background: peachpuff;
+    background: #28282B;
     border-radius: 50%;
     height: 1.75rem;
     width: 1.75rem;
@@ -102,12 +102,13 @@ body {
 
 .slide-button:hover, .flip:hover {
     cursor: pointer;
-    background: #ffceb9;
+    background: #FAFAFA;
+    color: #28282B;
 }
 
 .flip {
-    background: peachpuff;
-    padding: .25rem 1rem;
+    background: #28282B;
+    padding: .5rem 1rem;
     border-radius: .5rem;
     font-size: .9rem;
     font-weight: 600;
