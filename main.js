@@ -99,19 +99,19 @@ function getCocktails(arr) {
         }
 
         let drinkInfo = `
-        <section id="cocktail-info" class="cocktail-info hidden">
-            <section class="cocktail-details">
-                <p class="italic">${cocktail.strCategory}</p>
-                <p class="italic">${cocktail.strAlcoholic}</p>
-                <p class="italic">${cocktail.strGlass}</p>
-                <h2 class="right">Ingredients</h2>
-                <section>${ingredients}</section>
-                <h2 class="right">Recipe</h2>
-                <p class="instructions">${cocktail.strInstructions}</p>
+            <section id="cocktail-info" class="cocktail-info hidden">
+                <section class="cocktail-details">
+                    <p class="italic">${cocktail.strCategory}</p>
+                    <p class="italic">${cocktail.strAlcoholic}</p>
+                    <p class="italic">${cocktail.strGlass}</p>
+                    <h2 class="right">Ingredients</h2>
+                    <section>${ingredients}</section>
+                    <h2 class="right">Recipe</h2>
+                    <p class="instructions">${cocktail.strInstructions}</p>
+                </section>
             </section>
-        </section>
-    `
-    let drinkImg = `<img id="cocktail-img" src=${cocktail.strDrinkThumb} alt=${cocktail.strDrink}>`
+        `
+        let drinkImg = `<img id="cocktail-img" src=${cocktail.strDrinkThumb} alt=${cocktail.strDrink}>`
 
         cocktailsToRender.push(`
             <section id=${cocktail.idDrink} class="cocktail">
