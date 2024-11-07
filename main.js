@@ -91,7 +91,6 @@ function getCocktails(arr) {
         let drinkInfo = `
             <section id="cocktail-info" class="cocktail-info hidden">
                 <section class="cocktail-details">
-                    <h1>${cocktail.strDrink}</h1>
                     <p>${cocktail.strCategory}</p>
                     <p>${cocktail.strAlcoholic}</p>
                     <p>${cocktail.strGlass}</p>
@@ -122,6 +121,7 @@ function getCocktails(arr) {
                     <div id="next-btn" class="slide-button">></div>
                 </section>
                 <div>
+                    <h1>${cocktail.strDrink}</h1>
                     ${drinkImg}
                     ${drinkInfo}
                 </div>

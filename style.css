@@ -34,8 +34,13 @@
 }
 
 .cocktail-info {
-    /* display: flex; */
-    margin-top: 1rem;
+    margin-top: .5rem;
+}
+
+.cocktail div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cocktail-details {
@@ -64,7 +69,7 @@
 .cocktail img {
     width: 96%;
     border-radius: .5rem;
-    margin: 0 auto;
+    margin: .5rem auto 0;
 }
 
 /* CONTROLS */
