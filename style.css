@@ -5,6 +5,11 @@
     font-family: "Raleway", Helvetica, sans-serif;
 }
 
+body {
+    background: #343434;
+    color: #FAFAFA;
+}
+
 .right {
     text-align: right;
 }
@@ -107,4 +112,5 @@
     font-size: .9rem;
     font-weight: 600;
     text-transform: uppercase;
+    user-select: none;
 }
