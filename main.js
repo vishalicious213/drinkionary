@@ -40,7 +40,6 @@ function handleDrinkClick(e) {
 
     if (e.target.id === "flip") {
         flipped = !flipped
-        console.log(flipped)
 
         const info = document.getElementById("cocktail-info")
         const img = document.getElementById("cocktail-img")
@@ -74,8 +73,6 @@ function getData(btn) {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?${btn}=${searchTerm}`)
     .then(res => res.json())
     .then(data => {
-        // console.log(data)
-
         if (btn === "s") {
             getCocktails(data.drinks)
         }
@@ -87,7 +84,6 @@ function getData(btn) {
 
 function getCocktails(arr) {
     cocktailsToRender = []
-    console.log(arr)
 
     arr.map(cocktail => {
         let ingredients = ""
