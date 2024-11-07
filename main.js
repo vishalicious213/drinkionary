@@ -44,13 +44,16 @@ function handleDrinkClick(e) {
 
         const info = document.getElementById("cocktail-info")
         const img = document.getElementById("cocktail-img")
+        const flipButton = document.getElementById("flip")
 
         if (flipped) {
             info.classList.remove("hidden")
             img.classList.add("hidden")
+            flipButton.innerHTML = "See picture"
         } else {
             info.classList.add("hidden")
             img.classList.remove("hidden")
+            flipButton.innerHTML = "See recipe"
         }
     }
 }
@@ -118,7 +121,7 @@ function getCocktails(arr) {
             <section id=${cocktail.idDrink} class="cocktail">
                 <section class="controls">
                     <div id="prev-btn" class="slide-button"><</div>
-                    <div id="flip" class="flip">flip card</div>
+                    <div id="flip" class="flip">See recipe</div>
                     <div id="next-btn" class="slide-button">></div>
                 </section>
                 <div>
