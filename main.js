@@ -2,26 +2,22 @@ const menu = document.getElementById("menu")
 const renderSection = document.getElementById("render-area")
 let cocktailsToRender = []
 let currentSlide = 0
+let flipped = false
 
 // ⬇️ EVENT LISTENERS ⬇️
 
 menu.addEventListener("click", handleMenuClick)
-
 renderSection.addEventListener("click", handleDrinkClick)
 
 // ⬇️ EVENT HANDLERS ⬇️
 
 function handleMenuClick(e) {
-    console.log(e.target.id)
-
     if (e.target.id === "cocktail-btn") {
         getData("s")
     }
 }
 
 function handleDrinkClick(e) {
-    console.log(e.target.id)
-
     if (e.target.id === "prev-btn") {
         currentSlide--
 
@@ -40,6 +36,22 @@ function handleDrinkClick(e) {
         }
 
         renderCocktails(cocktailsToRender, currentSlide)
+    }
+
+    if (e.target.id === "flip") {
+        flipped = !flipped
+        console.log(flipped)
+
+        const info = document.getElementById("cocktail-info")
+        const img = document.getElementById("cocktail-img")
+
+        if (flipped) {
+            info.classList.remove("hidden")
+            img.classList.add("hidden")
+        } else {
+            info.classList.add("hidden")
+            img.classList.remove("hidden")
+        }
     }
 }
 
@@ -76,6 +88,21 @@ function getCocktails(arr) {
 
     arr.map(cocktail => {
         let ingredients = ""
+        let drinkInfo = `
+            <section id="cocktail-info" class="cocktail-info hidden">
+                <section class="cocktail-details">
+                    <h1>${cocktail.strDrink}</h1>
+                    <p>${cocktail.strCategory}</p>
+                    <p>${cocktail.strAlcoholic}</p>
+                    <p>${cocktail.strGlass}</p>
+                    <h2 class="right">Ingredients</h2>
+                    <section>${ingredients}</section>
+                    <h2 class="right">Recipe</h2>
+                    <p class="instructions">${cocktail.strInstructions}</p>
+                </section>
+            </section>
+        `
+        let drinkImg = `<img id="cocktail-img" src=${cocktail.strDrinkThumb} alt=${cocktail.strDrink}>`
 
         for (let i = 1; i <= 15; i++) {
             // console.log(cocktail[`strIngredient${i}`])
@@ -89,21 +116,15 @@ function getCocktails(arr) {
 
         cocktailsToRender.push(`
             <section id=${cocktail.idDrink} class="cocktail">
-                <section class="cocktail-info">
+                <section class="controls">
                     <div id="prev-btn" class="slide-button"><</div>
-                    <section class="cocktail-details">
-                        <h1>${cocktail.strDrink}</h1>
-                        <p>${cocktail.strCategory}</p>
-                        <p>${cocktail.strAlcoholic}</p>
-                        <p>${cocktail.strGlass}</p>
-                        <h2 class="right">Ingredients</h2>
-                        <section>${ingredients}</section>
-                        <h2 class="right">Recipe</h2>
-                        <p class="instructions">${cocktail.strInstructions}</p>
-                    </section>
+                    <div id="flip" class="flip">flip card</div>
                     <div id="next-btn" class="slide-button">></div>
                 </section>
-                <img src=${cocktail.strDrinkThumb} alt=${cocktail.strDrink}>
+                <div>
+                    ${drinkImg}
+                    ${drinkInfo}
+                </div>
             </section>
         `)
     }).join("")
@@ -116,4 +137,7 @@ function getCocktails(arr) {
 function renderCocktails(arr, slideNum) {
     renderSection.innerHTML = ""
     renderSection.innerHTML = arr[slideNum]
+
+    document.getElementById("cocktail-info").classList.add("hidden")
+    document.getElementById("cocktail-img").classList.remove("hidden")
 }

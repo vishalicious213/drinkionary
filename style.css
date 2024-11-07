@@ -9,17 +9,33 @@
     text-align: right;
 }
 
+.hidden {
+    display: none;
+}
+
+.show {
+    display: flex;
+}
+
+/* MENU */
+
+.menu {
+    margin: 1rem .25rem;
+    padding: 1rem .5rem;
+    border-radius: .5rem;
+    background-color: peachpuff;
+}
+
 /* COCKTAIL CARDS */
 
 .cocktail {
-    margin-top: 1rem;
     display: flex;
     flex-direction: column;
 }
 
 .cocktail-info {
-    display: flex;
-    margin-bottom: .5rem;
+    /* display: flex; */
+    margin-top: 1rem;
 }
 
 .cocktail-details {
@@ -51,6 +67,14 @@
     margin: 0 auto;
 }
 
+/* CONTROLS */
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .slide-button {
     display: flex;
     justify-content: center;
@@ -64,4 +88,5 @@
 
 .slide-button:hover {
     cursor: pointer;
+    background: #ffceb9;
 }
